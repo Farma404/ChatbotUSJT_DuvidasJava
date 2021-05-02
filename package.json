@@ -12,5 +12,8 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "telegraf": "^4.3.0"
+  },
+  "endines": {
+    "node": "14.x"
   }
 }
