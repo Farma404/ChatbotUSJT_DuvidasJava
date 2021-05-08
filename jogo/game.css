@@ -37,8 +37,8 @@ body{
     background: linear-gradient(32grad, rgba(230, 30, 30, 1) 0%, rgb(225, 10, 10, 1) 100%)
 }
 
-/* Display */
 
+/* Display */
 #hud{
     display: flex;
     justify-content: space-between;
