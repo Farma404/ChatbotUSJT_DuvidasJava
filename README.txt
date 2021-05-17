@@ -1,6 +1,10 @@
 Entrega dia 09/05/2021
     * Dado inicio ao primeiro layout do jogo ainda sem o banco de dados arquivos dentro da pasta "jogo".
 
+Entrega dia 16/05/2021
+    * Realizado criação das páginas de seleção de linguagem e difículdade.
+    * Alterado classes para inciar o jogo atravez do Telegram
+
 
 
 A fazer:
@@ -11,5 +15,3 @@ A fazer:
     * implementar ao menos duas linguagens sendo planejado Java e MySQL.
     * Criar perguntas e respostas para alimentar o Quiz.
     * Criar um feedback sobre o desempenho do jogador e se possível indicando Docs sobre o assunto ao qual ele pussuiu pior desempenho no jogo.
-
-    criado páginas de seleção de linguagem e difículdade.
