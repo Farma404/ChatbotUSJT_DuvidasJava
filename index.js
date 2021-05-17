@@ -1,48 +1,57 @@
 require('dotenv').config()
-const { Telegraf } = require ('telegraf');
+const express = require("express");
+const path = require("path");
+const TelegramBot = require("node-telegram-bot-api");
+const server = express();
+const bot = new TelegramBot(process.env.TOKEN, { polling: true });
+const port = process.env.PORT || 5000;
+const gameName = "ProgQuizGame"
+const queries = {};
+server.use(express.static(path.join(__dirname, 'jogo')));
 
-const bot = new Telegraf(process.env.TOKEN);
+bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "Este bot implementa um quiz com questões sobre Java e MySQL."));
 
-const startMessage = 'Bem Vindo!';
-const sorryMessage = 'Lamento mas ainda não sei nada a respeito.'
-const helpMessage = 'Sou fácil de usar, basta perguntar!'
-const settingMessage = 'Ainda não possuo configurações para ajustar.'
 
-const baseMessage = [
-    {
-        chave: 'if',
-        valor: 'Um if é uma estrutura de seleção que executará um comando caso sua condição seja satisfeita.\n\nExemplo de uso:\nif(<condição>){\n<comando a ser executado>\n}',
-    },
-    {
-        chave: 'else',
-        valor: 'O comando else será executado caso a condição prescrita no "if" não seja satisfeita.\n\nExemplo de uso:\nif(<condição>){\n<comando a ser executado>\n}\n\nelse{\n<comando a ser executado>\n}'
+bot.on("callback_query", function (query) {
+    if (query.game_short_name !== gameName) {
+        bot.answerCallbackQuery(query.id, "Sorry, '" + query.game_short_name + "' is not available.");
     }
-]
-
-bot.start((ctx) => {
-    ctx.reply(startMessage);
-})
-bot.help((ctx) => {
-    ctx.reply(helpMessage);
-})
-bot.settings((ctx) => {
-    ctx.reply(settingMessage);
-})
-
-bot.on('text', (ctx) => {
-    //console.log(ctx);
-    try{
-        const resp = baseMessage.find(item => {
-            return ctx.message.text.toLowerCase().includes(item.chave);
+    else{
+        queries[query.id] = query;
+        let gameurl = "http://127.0.0.1:5500/jogo/index.html?id=" + query.id;
+        bot.answerCallbackQuery({
+            callback_query_id: query.id,
+            url:gameurl
         })
-        ctx.reply(resp.valor);
     }
-    catch (err){
-        //console.log(err);
-        ctx.reply(sorryMessage);
-    }
-})
+});
 
-bot.launch();
+bot.on("inline_query", function(iq){
+    bot.answerInlineQuery(iq.id, [{type: "game", id: "0", game_short_name: gameName}]);
+});
+
+/* HighScore Telegram
+
+server.get("/highScore/:score", function(req, res, next){
+    if(!Object.hasOwnProperty.call(queries, req.query.id)) return next();
+    let query = queries[req.query.id];
+    let options;
+
+    if(query.message){
+        options = {
+            chat_id: query.message.message_id
+        };
+    }
+    else{
+        options = {
+            inline_message_id: query.inline_message_id
+        };
+    }
+
+    bot.setGameScore(query.from.id, parseInt(req.params.score), options, function(err, result){});
+});
+
+
 process.once('SIGINT',  () => bot.stop ("SIGINT"));
 process.once("SIGTERM", () => bot.stop ("SIGTERM"));
+*/

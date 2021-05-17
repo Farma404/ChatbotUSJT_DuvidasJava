@@ -98,6 +98,107 @@ h2{
     font-size: 2.5rem;
     margin-right: 1rem;
 }
+.fa-home{
+    font-size: 2.5rem;
+    margin: 1rem;
+}
+
+/* language.html */
+.btn-java{
+    font-size: 2.5rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: rgb(30, 25, 25);
+    background: linear-gradient(90deg, rgb(200, 20, 40) 0%, rgb(158, 90, 40) 100%);
+    border-radius: 4px;
+}
+
+.btn-java:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(125, 20, 20, 0.3);
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+.btn-sql{
+    font-size: 2.5rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: rgb(30, 25, 25);
+    background: linear-gradient(90deg, rgb(25, 65, 150) 0%, rgb(210, 110, 40) 100%);
+    border-radius: 4px;
+}
+
+.btn-sql:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(10, 115, 255, 0.3);
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+/* difficulty.html */
+.btn-easy{
+    font-size: 2.5rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: rgb(30, 25, 25);
+    background: linear-gradient(90deg, rgb(50, 200, 60) 0%, rgb(60, 200, 65) 100%);
+    border-radius: 4px;
+}
+
+.btn-easy:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(60, 210, 70, 0.3);
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+.btn-average{
+    font-size: 2.5rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: rgb(30, 25, 25);
+    background: linear-gradient(90deg, rgb(225, 225, 30) 0%, rgb(230, 230, 35) 100%);
+    border-radius: 4px;
+}
+
+.btn-average:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(225, 225, 20, 0.3);
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+.btn-hard{
+    font-size: 2.5rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: rgb(30, 25, 25);
+    background: linear-gradient(90deg, rgb(175, 20, 20) 0%, rgb(180, 25, 25) 100%);
+    border-radius: 4px;
+}
+
+.btn-hard:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(175, 25, 25, 0.3);
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
 
 
 /* end.html */

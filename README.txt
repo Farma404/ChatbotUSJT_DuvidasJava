@@ -11,3 +11,5 @@ A fazer:
     * implementar ao menos duas linguagens sendo planejado Java e MySQL.
     * Criar perguntas e respostas para alimentar o Quiz.
     * Criar um feedback sobre o desempenho do jogador e se possível indicando Docs sobre o assunto ao qual ele pussuiu pior desempenho no jogo.
+
+    criado páginas de seleção de linguagem e difículdade.
