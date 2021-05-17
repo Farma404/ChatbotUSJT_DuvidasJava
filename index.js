@@ -18,7 +18,7 @@ bot.on("callback_query", function (query) {
     }
     else{
         queries[query.id] = query;
-        let gameurl = "http://127.0.0.1:5500/jogo/index.html?id=" + query.id;
+        let gameurl = "https://git.heroku.com/prog-quiz-game/index.html?id=" + query.id;
         bot.answerCallbackQuery({
             callback_query_id: query.id,
             url:gameurl
