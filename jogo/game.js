@@ -12,12 +12,12 @@ let availableQuestions = []
 
 let questions = [
     {
-        question: "test01 /b",
-        choice1: "a",
-        choice2: "b",
-        choice3: "c",
-        choice4: "d",
-        answer: 2,
+        question: "No que diz respeito à criação de métodos em Java, o qualificador ou modificador define a visibilidade e pode ser de três tipos básicos:\n\nI. é visível apenas pela própria classe. É o qualificador mais restritivo.\nII. é visível pela própria classe, por suas subclasses e pelas classes do mesmopacote.\nIII. é visível por qualquer classe, sendo o qualificador mais aberto no sentido de quequalquer classe pode usar esse método.”\nOs métodos definidos em I, II e III são respectivamente denominados:",
+        choice1: "private, protected e public.",
+        choice2: "private, public e protected.",
+        choice3: "public, protected e private",
+        choice4: "protected, public e private.",
+        answer: 1,
     },
     {
         question: "test02 /a",
@@ -53,6 +53,9 @@ startGame = () => {
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
+
+    console.log(localStorage.getItem('language'))
+    console.log(localStorage.getItem('dificult'))
 }
 
 getNewQuestion = () => {

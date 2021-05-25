@@ -3,7 +3,12 @@ Entrega dia 09/05/2021
 
 Entrega dia 16/05/2021
     * Realizado criação das páginas de seleção de linguagem e difículdade.
-    * Alterado classes para inciar o jogo atravez do Telegram
+    * Alterado classes para inciar o jogo atravez do Telegram.
+
+Entrega dia 23/05/2021 (finalizado dia 25/05)
+    * Criar perguntas e respostas para alimentar o Quiz.
+    * implementar ao menos duas linguagens sendo planejado Java e MySQL.
+    * Implementar níveis de difilculdade.
 
 
 
@@ -11,7 +16,3 @@ A fazer:
     * Criar o banco de dados.
     * Integrar o jogo ao bot de tal forma que ao ser chamado o bot possa iniciar o jogo.
     * Criar uma lógica para a pontuação definida através do peso da questão e do tempo que for levado para responde-lá.
-    * Implementar níveis de difilculdade, além do peso de cada questão.
-    * implementar ao menos duas linguagens sendo planejado Java e MySQL.
-    * Criar perguntas e respostas para alimentar o Quiz.
-    * Criar um feedback sobre o desempenho do jogador e se possível indicando Docs sobre o assunto ao qual ele pussuiu pior desempenho no jogo.

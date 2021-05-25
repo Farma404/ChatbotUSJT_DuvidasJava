@@ -9,12 +9,23 @@
         <script src="https://kit.fontawesome.com/e1a17d4c62.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container">
-            <div id="home" class="flex-column flex-center">
-                <h1 id="text-language">Escolha a linguagem</h1>
-                <a href="difficulty.html" class="btn-java">Java</a>
-                <a href="difficulty.html" class="btn-sql">MySQL</a>
+        <div class="container-language flex-column flex-center">
+            <h1>Escolha a linguagem.</h1>
+            <button id="language" class="btn-java" value="1" onclick="language(this.value)">Java</button>
+            <button id="language" class="btn-sql" value="2" onclick="language(this.value)">MySQL</div>
+
+            <div class="modal">
+                <div onclick="fechar()" class="fechar"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
+                
+                <div id="home" class="flex-column flex-center">
+                    <h1 id="text-language">Escolha a dificuldade</h1>
+                    <button class="btn-easy" value="1" onclick="dificult(this.value)">Fácil</button>
+                    <button class="btn-average" value="2" onclick="dificult(this.value)">Médio</button>
+                    <button class="btn-hard" value="3" onclick="dificult(this.value)">Difícil</button>
+                </div>
             </div>
         </div>
+
+        <script src="language.js"></script>
     </body>
 </html>

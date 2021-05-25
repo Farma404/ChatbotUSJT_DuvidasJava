@@ -34,6 +34,15 @@ h2{
     padding: 2rem;
 }
 
+.container-language{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
 .flex-column{
     display: flex;
     flex-direction: column;
@@ -104,6 +113,25 @@ h2{
 }
 
 /* language.html */
+.modal{
+    width: 500px;
+    height: 500px;
+    background: #223;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.fechar{
+    font-size: 5rem;
+    padding-right: 1rem;
+    color: #f00;
+    float: right;
+    cursor: pointer;
+}
+
 .btn-java{
     font-size: 2.5rem;
     padding: 2rem 0;
@@ -151,7 +179,7 @@ h2{
     margin-bottom: 1rem;
     text-decoration: none;
     color: rgb(30, 25, 25);
-    background: linear-gradient(90deg, rgb(50, 200, 60) 0%, rgb(60, 200, 65) 100%);
+    background: linear-gradient(90deg, rgb(30, 200, 30) 0%, rgb(30, 210, 35) 100%);
     border-radius: 4px;
 }
 
@@ -237,10 +265,4 @@ input::placeholder{
 
 #saveScoreBtn{
     border: none;
-}
-
-.fa-home{
-    margin-right: 1rem;
-    font-size: 2rem;
-    color: rgb(30, 30, 25);
 }

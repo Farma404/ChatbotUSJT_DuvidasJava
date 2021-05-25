@@ -56,6 +56,12 @@ body{
     transform: scale(1.05);
 }
 
+.question{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 5rem;
+}
+
 
 /* Display */
 #hud{
