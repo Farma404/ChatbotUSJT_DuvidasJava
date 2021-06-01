@@ -10,9 +10,11 @@ Entrega dia 23/05/2021 (finalizado dia 25/05)
     * implementar ao menos duas linguagens sendo planejado Java e MySQL.
     * Implementar níveis de difilculdade.
 
+Entrega dia 30/05/2021
+    * Realizado novo procedimento para calculo de pontuação com base no tempo de resposta.
+    * Criado banco de dados utilizando MongoDB.
+    * Adicionado as perguntas ao banco de dados.
 
 
 A fazer:
-    * Criar o banco de dados.
     * Integrar o jogo ao bot de tal forma que ao ser chamado o bot possa iniciar o jogo.
-    * Criar uma lógica para a pontuação definida através do peso da questão e do tempo que for levado para responde-lá.

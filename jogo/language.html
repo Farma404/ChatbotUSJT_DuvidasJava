@@ -11,17 +11,17 @@
     <body>
         <div class="container-language flex-column flex-center">
             <h1>Escolha a linguagem.</h1>
-            <button id="language" class="btn-java" value="1" onclick="language(this.value)">Java</button>
-            <button id="language" class="btn-sql" value="2" onclick="language(this.value)">MySQL</div>
+            <button id="language" class="btn-java" value="java" onclick="language(this.value)">Java</button>
+            <button id="language" class="btn-sql" value="mysql" onclick="language(this.value)">MySQL</div>
 
             <div class="modal">
                 <div onclick="fechar()" class="fechar"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
                 
                 <div id="home" class="flex-column flex-center">
                     <h1 id="text-language">Escolha a dificuldade</h1>
-                    <button class="btn-easy" value="1" onclick="dificult(this.value)">Fácil</button>
-                    <button class="btn-average" value="2" onclick="dificult(this.value)">Médio</button>
-                    <button class="btn-hard" value="3" onclick="dificult(this.value)">Difícil</button>
+                    <button class="btn-easy" value="facil" onclick="difficulty(this.value)">Fácil</button>
+                    <button class="btn-average" value="medio" onclick="difficulty(this.value)">Médio</button>
+                    <button class="btn-hard" value="dificil" onclick="difficulty(this.value)">Difícil</button>
                 </div>
             </div>
         </div>

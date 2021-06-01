@@ -4,8 +4,8 @@ function language(lang){
     modal.style.display = 'block';
 }
 
-function dificult(dif){
-    localStorage.setItem('dificult', dif);
+function difficulty(dif){
+    localStorage.setItem('difficulty', dif);
     return window.location.assign('game.html');
 }
 
