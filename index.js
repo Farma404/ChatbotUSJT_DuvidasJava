@@ -1,50 +1,63 @@
-//----------------------------------------------------------------------------------//
-//-------Ainda em criação, necessária correção do CRUD e colocação no HEROKU-------//
-//--------------------------------------------------------------------------------//
-require('dotenv').config()
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
-const TelegramBot = require("node-telegram-bot-api");
+const bodyParser = require("body-parser");
+const connections = require("./servidor/CRUD/connect");
+const telegram = require("./telegram")
+const inserir = require("./servidor/CRUD/insert");
+const selecionar = require("./servidor/CRUD/select");
+const deletar = require("./servidor/CRUD/delete");
 const server = express();
-const bot = new TelegramBot(process.env.TOKEN, { polling: true });
-const port = process.env.PORT || 5000;
-const gameName = "ProgQuizGame"
-const queries = {};
-server.use(express.static(path.join(__dirname, 'jogo')));
+const port = process.env.PORT || 5500;
 
-/*const Question = require('./jogo/model/java1')
-var question;
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO)
-.then(() =>{
-    console.log("Conexão OK")
-}).catch(() => {
-    console.log("failed")
-})
+server.use("/jogo", express.static(path.join(__dirname, 'jogo')));
+server.use(bodyParser.json());
 
-Question.find({}).then(doc => {
-    question = doc;
-    console.log(question);
-})*/
-
-bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "Este bot implementa um quiz com questões sobre Java e MySQL, para iniciar basta digitar no chat \"@usjt_duvidas_prog_java_bot\" ou \"/start\" no chat de Duvidas de programação (Java)."));
-bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
-
-
-bot.on("callback_query", function (query) {
-    if (query.game_short_name !== gameName) {
-        bot.answerCallbackQuery(query.id, "Sorry, '" + query.game_short_name + "' is not available.");
-    }
-    else{
-        queries[query.id] = query;
-        let gameurl = "http://127.0.0.1:5500/jogo/index.html";
-        bot.answerCallbackQuery({
-            callback_query_id: query.id,
-            url:gameurl
-        })
-    }
+server.post("/insertquestion", (req, res) => {
+    inserir(req.body, "question").then((doc) => {
+        res.sendStatus(200);
+    }).catch((err) => {
+        res.sendStatus(400);
+    });
 });
 
-bot.on("inline_query", function(iq){
-    bot.answerInlineQuery(iq.id, [{type: "game", id: "0", game_short_name: gameName}]);
+server.post("/insertscore", (req, res) => {
+    const highScores = Object.values(req.body);
+    inserir(highScores, "highScore").then((doc) => {
+        res.sendStatus(200);
+    }).catch((err) => {
+        res.sendStatus(400);
+    });
+});
+
+server.get("/selectquestion", (req, res) => {
+    let campos = req.query || [];
+    selecionar(campos, "question").then((doc) => {
+        res.json(doc);
+    }).catch((err) => {
+        res.sendStatus(400);
+    });
+});
+
+server.get("/selectscore", (req, res) => {
+    let campos = req.query || [];
+    selecionar(campos, "highScore").then((doc) => {
+        res.json(doc);
+    }).catch((err) => {
+        res.sendStatus(400);
+    });
+});
+
+server.delete("/score/delete", (req, res) => {
+    let campos = req.query || [];
+    deletar(campos, "highScore").then((result) =>{
+        res.sendStatus(200);
+    }).catch((err) => {
+        res.sendStatus(400);
+        console.log(err);
+    });
+})
+
+server.listen(port, () => {
+    console.log(`Ouvindo na porta ${port}`);
 });

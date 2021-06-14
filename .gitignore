@@ -3,7 +3,4 @@ node_modules/
 tests.html
 tests.css
 tests.js
-addJava1.js
-addJava2.js
-AddMySQL1.js
-addMySQL2.js
+addJava.js

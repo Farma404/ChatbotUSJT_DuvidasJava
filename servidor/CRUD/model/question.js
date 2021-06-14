@@ -8,6 +8,7 @@ const questionsSchema = mongoose.Schema({
     choice4: {type: String, required: true},
     answer: {type: Number, required: true},
     time: {type: Number, required: true},
+    language: {type: String, required: true},
 });
 
-module.exports = mongoose.model('qJava1', questionsSchema);
+module.exports = mongoose.model('question', questionsSchema);
