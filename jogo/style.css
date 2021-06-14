@@ -114,8 +114,8 @@ h2{
 
 /* language.html */
 .modal{
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     background: #223;
     position: absolute;
     top: 50%;
@@ -125,7 +125,7 @@ h2{
 }
 
 .fechar{
-    font-size: 5rem;
+    font-size: 3rem;
     padding-right: 1rem;
     color: #f00;
     float: right;
@@ -135,7 +135,7 @@ h2{
 .btn-java{
     font-size: 2.5rem;
     padding: 2rem 0;
-    width: 30rem;
+    width: 20rem;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
@@ -154,7 +154,7 @@ h2{
 .btn-sql{
     font-size: 2.5rem;
     padding: 2rem 0;
-    width: 30rem;
+    width: 20rem;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
@@ -174,7 +174,7 @@ h2{
 .btn-easy{
     font-size: 2.5rem;
     padding: 2rem 0;
-    width: 30rem;
+    width: 20rem;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
@@ -193,7 +193,7 @@ h2{
 .btn-average{
     font-size: 2.5rem;
     padding: 2rem 0;
-    width: 30rem;
+    width: 20rem;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
@@ -212,7 +212,7 @@ h2{
 .btn-hard{
     font-size: 2.5rem;
     padding: 2rem 0;
-    width: 30rem;
+    width: 20rem;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
