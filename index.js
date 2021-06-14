@@ -1,17 +1,17 @@
 require('dotenv').config();
 const express = require("express");
 const path = require("path");
-const bodyParser = require("body-parser");
 const connections = require("./servidor/CRUD/connect");
-const telegram = require("./telegram")
+const telegram = require("./telegram");
 const inserir = require("./servidor/CRUD/insert");
 const selecionar = require("./servidor/CRUD/select");
 const deletar = require("./servidor/CRUD/delete");
 const server = express();
 const port = process.env.PORT || 5500;
+const token = process.env.TOKEN;
 
 server.use("/jogo", express.static(path.join(__dirname, 'jogo')));
-server.use(bodyParser.json());
+server.use(express.json());
 
 server.post("/insertquestion", (req, res) => {
     inserir(req.body, "question").then((doc) => {
@@ -56,6 +56,11 @@ server.delete("/score/delete", (req, res) => {
         res.sendStatus(400);
         console.log(err);
     });
+})
+
+server.post(`/telegram/${token}`, (req, res) => {
+    telegram.processUpdate(req.body);
+    res.sendStatus(200);
 })
 
 server.listen(port, () => {
