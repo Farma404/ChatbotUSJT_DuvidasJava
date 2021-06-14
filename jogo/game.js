@@ -30,7 +30,7 @@ axios.get(`/selectquestion?language=${lang}`).then((response) => {
         availableQuestions = [...questions]
         
         if(diff === "facil"){
-            MAX_QUESTIONS = 3;
+            MAX_QUESTIONS = 12;
             SCORE_POINTS = 80;
         }
         else if(diff === "medio"){
