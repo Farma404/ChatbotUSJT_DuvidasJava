@@ -15,6 +15,4 @@ Entrega dia 30/05/2021
     * Criado banco de dados utilizando MongoDB.
     * Adicionado as perguntas ao banco de dados.
 
-
-A fazer:
-    * Integrar o jogo ao bot de tal forma que ao ser chamado o bot possa iniciar o jogo.
+    *Realizado integração com o Heroku e corrigido CRUD com o MongoDB.
